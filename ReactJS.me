@@ -1,0 +1,335 @@
+https://reactjs.org/docs/getting-started.html
+
+1) JSX is a XML-like syntax extension to ECMAScript without any defined semantics
+
+2)JSX is a preprocessor step that adds XML syntax to JavaScript. 
+You can definitely use React without JSX but JSX makes React a lot more elegant.
+
+3)Just like XML, JSX tags have a tag name, attributes, and children. 
+If an attribute value is enclosed in quotes, the value is a string. 
+Otherwise, wrap the value in braces and the value is the enclosed JavaScript expression.
+
+
+##########
+Section 1 Getting started
+
+Lec 1 - [Introduction] - JAVA script driven web app.
+Lec 2 - [What is React?] - What Why and How?
+        >React is Javascript liberary for buiding user interface
+        >React is run on browser not in server.
+        >React use component and component is custom html element [it is maintable and resuable]
+
+Lec 3 - [Join online learning community]
+        "Academind Community" on Discord: https://discord.gg/gxvEWGU
+
+Lec 4 - [Real-World SPAs & React Web Apps]
+
+Lec 5 - [Writing Our First Code]
+        >React component is just component 
+        >Bable is prepocesor JXS.
+        >React Dom [ReactDOM.render()] - allows JS function as component to the real DOM.
+        >class is key word in javascript so for define class in DOM need to use className.
+        
+Lec 6 - [Why Should We Choose React? ]
+        >UI state become difficult to handle with vanlla javascript.
+        >Focus on Business Logic Not preventing your app from exploding.
+        >Huge eco system active comunity 
+        >High perfomance
+        
+Lec 7/8/9/10/11
+
+        
+##########Section 2: Refreshing Next Generation JavaScript (Optional)
+Lec 12 - Module Introduction
+
+Lec 13 [Undersranding "let" and "const"]
+        - let and const  (key words)
+        >before in JS there are var
+        >const =  constant never change.
+        >let = new var , its change.
+        
+Lec 14 - [Arrow function]
+
+        ex :
+        
+        ##Old code:
+        function myFun(){
+        }
+        
+        ##New code:
+        const myFunc = () =>{
+        
+        }
+        
+        
+        for new function no more this keyword needed.
+        --
+        
+        one line code::
+        const multiplyVal = (number) => number*2;
+        console.log(multiplyVal(2));
+
+Lec 15 - Export & Imports (Modules)
+        >Inside JS file we can import content of other file.
+        >default export ==then==> import Person from './Person.js'
+                                  import Per from './Person.js'
+        >named export =>
+            - import {smth} from './utility.js';
+            - import * as bundled from './utility.js';
+
+Lec 16 -  classes
+        >Blue print for object.
+                propety / method
+                
+        >define - const myPerson = new Person();
+        >class person extends master{}
+        
+Lec 17 - Classes property Mehtod
+        >we can skip constructor() in ES7
+         myProperty = 'value';
+         myMethod() => ();
+         
+         
+Lec 18 - Spread and Rest operator
+
+        >Spread 
+                -used to split up array element or object properties.
+                -const newArray = {...oldArray,1,2}
+                -const newObj = {...oldObject, newProp:5}
+                
+        >Rest
+                -used to merge list of function arguments in to array
+                function sortArg(...args){
+                        return args.sort();
+                }
+                
+Lec 19 - Destructing
+
+        >Easily extract array element or object properties & store them in variables.
+        >Array Destructing::
+                [a,b] = ["Hello","Max"]
+                console.log(a);
+                console.log(b);
+        >Object Destructing::
+                {name} = {name:'Max', age:28}
+                console.log(name);
+                console.log(age);
+        >const numbers = [1,2,3];
+         [num1,,num3] = numbers;
+         console.log(num1, num3);
+         
+         output: 1,3
+
+
+Lec 20 References & Primitive type refresher
+        > real coply num
+                const num1 = 1;
+                const num2 =  num1;
+                console.log(num1);
+                console.log(num2);
+                     
+                
+        >object use references
+                const person = {
+                        name:'max'
+                };
+                
+                const secondPerson = person;
+                person.name = 'Manu';
+                console.log(person.name);
+                console.log(secondPerson.name);
+                
+                
+Lec 21 Refreshing array functions
+
+        const number = [1,2,3];
+        const doubleNumberArray = number.map(number=>{
+                return number * 2;
+        });
+        
+        console.log(doubleNumberArray);
+        
+Lec 22 - no need 
+Lec 23 - refer pdf
+Lec 24 - practice function ..
+ ##########       
+Section 3  understanding the Base Features & Syntaxt :
+
+Lect 25 : Module Introduction
+
+Lect 26 The Build Workflow
+  -> Useing a build work flow
+   > Recomanded for spas and mpas
+   > Optimize code (faster)
+   > Use Nextt-Gen Javascript Features.
+   > Be More Productive.
+   > Use Dependency mgt system - npm or yarn.
+   > Use Bundler
+     Recommended : webpack
+   > Use complier (Next-Gen Javascriipt)
+     Bable + Presets
+   > Use a Development Server 
+     running on server.
+   
+Lect 27 Using Create React App.
+> sudo npm install create-react-app -g
+> sudo chown -R 1000:1000 "/home/meena/.npm"
+  npx create-react-app my-app
+> npm start
+
+Lec 28 Undersranding the folder structure.
+
+>package.json - depency use for app mention.
+>node_module - all dependancy
+>public - root folder server by web server by end.
+        -index.html
+        -mainfest.json - metadata for app
+>src - script file in src.
+
+ -index.js - access root element dom [index.html]
+ -registerService.js - precatch our script file.
+ -test.js - unit test.
+ 
+Lect 29 Understanding Component Basics
+ -custom html element is companonet which construct application.
+ 
+
+Lect 30 Understanding JSX
+ -Basic code is complie and render to brwoser
+ -If neeed to write code with React 
+  return React.createElement('div', {className : 'App'}, React.createElement('h1','this is working'))
+       1) element or other component
+       2) javascript obj
+       3) any amt childer ...what nested in div
+
+Lect 31 JSX Restriction
+  
+  -It clear look html and it allow html code in javascript file
+  -class is not because its key work in javacript , so className is used.
+  -code is not real html its jsx code.. but react convert it to html.
+  - we have only one root element.cant return json element, wrappe in one root html element
+  
+Lec 32 creating a Functional component.
+  
+  -react is lib to build component is easy.
+  -component simple function only return some jsx/html
+  
+  [here programe for component which crete by function]
+
+Lect 33 Components & JSX Cheat Sheet
+  
+  refer 'components-learning-card.pdf'
+  
+  >Components are the core building block of React apps. Actually, React really is just a library for creating components in its core.
+  >A typical React app therefore could be depicted as a component tree 
+    - having one root component ("App") and then an potentially infinite amount of nested child components.
+    
+  >Each component needs to return/ render some JSX code - it defines which HTML code React should render to the real DOM in the end.
+  
+  >JSX is NOT HTML but it looks a lot like it. Differences can be seen when looking closely though (for example className in JSX vs class in "normal HTML"). 
+  >JSX is just syntactic sugar for JavaScript, allowing you to write HTMLish code instead of nested React.createElement(...) calls.
+  
+  >When creating components, you have the choice between two different ways:
+        1. Functional components (also referred to as "presentational", "dumb" or "stateless" components - more about this later in the course) => 
+                const cmp = () => { return <div>some JSX</div> } 
+                (using ES6 arrow functions as shown here is recommended but optional)
+        2. class-based components (also referred to as "containers", "smart" or "stateful" components) => 
+                class Cmp extends Component { 
+                        render () {
+                                return <div>some JSX</div> 
+                         } 
+                }
+                        
+  
+Lect 34 Working with Components & Re-Using Them
+        [here code .. inform that child component how to re use in parent component.]  
+        
+        
+Lect 35 Outputting Dynamic Content
+  -wrap with single curly braces ->  {Math.random()} , use to show out put some value in react.
+  
+Lect 36. Working with Props
+  App.js
+          <Person name="mine" age="30  />"
+  
+  Person.js
+        const person = (props) =>{
+                return {props.name}
+        }
+
+        export default person;
+
+Lec 37 Understanding the Children Property
+
+>childer refer to any opening and closing element , it also refer plain text.
+          App.js
+          --------
+          <Person name="mine" age="30 >oh</Person
+  
+          Person.js
+          ----------
+          const person = (props) =>{
+                return (
+                        <p>{props.name}</p>
+                        <p>{props.childern}</p>
+                )
+          }
+          export default person;
+
+
+after Lec 36 & 37 --- Must see demo 'base-syntax-01-props-custom-cmp'
+
+Lect 38. Understanding & Using State
+
+> some content in side in component which state change
+> component class only allow state which extent Component
+> state cannot change .. if it change state lead to re render
+
+Lect 39. Props & State
+>revision
+
+Lect 40. Handling Events with Methods
+>react only pass references.
+>this not refere class at runtime ..
+>always use camel letter for react event.
+>this video show how click event call
+
+Lect 41. To Which Events Can You Listen?
+> need to read.
+
+Lec 42. Manipulating the State
+>Read - state-learning-card.pdf
+>state changes or prop changes, it basically analise code which alredady render to DOM and update to existing dom and update new state and prop
+
+
+Lec 43 Function Components Naming
+In the next lecture, we'll learn how to manage state in functional components (instead of class-based components).
+
+In case you're getting an error with the code shown in the next lecture, simply assign a capitalized variable name to the variable that holds your functional component.
+
+Example:
+
+Use
+
+const App = () => { ... }
+instead of
+
+const app = () => { ... }
+Technically, that's not required but depending on your project setup, the built-in linter (a code quality checking tool) that comes with create-react-app might not like the lowercase variable name.
+
+You can also avoid this by creating projects with the right react-scripts version, which I would recommend for this course anyways (see the setup video, lecture 26)
+
+create-react-app my-app --scripts-version 1.1.5
+
+
+Lec 44 Using the useState() Hook for state Manipulation::
+
+React 16.8 there is way to manage state in functional component called react hook.
+
+>useState is hook allow us mange state in functional component.
+
+two eleemnt
+ -> current state is first element
+ -> fucntion that allow s to update this state.
+ 
+  
