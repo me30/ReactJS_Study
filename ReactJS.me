@@ -60,12 +60,10 @@ Lec 14 - [Arrow function]
         const myFunc = () =>{
         
         }
-        
-        
-        for new function no more this keyword needed.
-        --
-        
-        one line code::
+            
+        In new function no more this keyword needed.
+                
+        ##one line code::
         const multiplyVal = (number) => number*2;
         console.log(multiplyVal(2));
 
@@ -77,20 +75,20 @@ Lec 15 - Export & Imports (Modules)
             - import {smth} from './utility.js';
             - import * as bundled from './utility.js';
 
-Lec 16 -  classes
+Lec 16 - [Undersranding class]
         >Blue print for object.
                 propety / method
                 
         >define - const myPerson = new Person();
         >class person extends master{}
         
-Lec 17 - Classes property Mehtod
+Lec 17 - [Classes property Mehtod]
         >we can skip constructor() in ES7
-         myProperty = 'value';
-         myMethod() => ();
+        > field - myProperty = 'value';
+        > method - myMethod() => ();
          
          
-Lec 18 - Spread and Rest operator
+Lec 18 - [The Spread and Rest operator]
 
         >Spread 
                 -used to split up array element or object properties.
@@ -103,23 +101,20 @@ Lec 18 - Spread and Rest operator
                         return args.sort();
                 }
                 
-Lec 19 - Destructing
+Lec 19 - [Destructing]
 
         >Easily extract array element or object properties & store them in variables.
         >Array Destructing::
                 [a,b] = ["Hello","Max"]
-                console.log(a);
-                console.log(b);
+                console.log(a); -- it will print Hello
+                console.log(b); -- it will print Max
         >Object Destructing::
                 {name} = {name:'Max', age:28}
-                console.log(name);
-                console.log(age);
+                console.log(name); -- it will print Max
+                console.log(age);  -- it will print nan
         >const numbers = [1,2,3];
          [num1,,num3] = numbers;
-         console.log(num1, num3);
-         
-         output: 1,3
-
+         console.log(num1, num3); -- output: 1,3
 
 Lec 20 References & Primitive type refresher
         > real coply num
@@ -127,7 +122,6 @@ Lec 20 References & Primitive type refresher
                 const num2 =  num1;
                 console.log(num1);
                 console.log(num2);
-                     
                 
         >object use references
                 const person = {
@@ -146,18 +140,35 @@ Lec 21 Refreshing array functions
         const doubleNumberArray = number.map(number=>{
                 return number * 2;
         });
-        
         console.log(doubleNumberArray);
         
-Lec 22 - no need 
-Lec 23 - refer pdf
-Lec 24 - practice function ..
- ##########       
+Lec 22 ,23
+
+Lec 24 - [JS Array Functions]
+
+Not really next-gen JavaScript, but also important: JavaScript array functions like map() , filter() , reduce()  etc.
+
+You'll see me use them quite a bit since a lot of React concepts rely on working with arrays (in immutable ways).
+
+The following page gives a good overview over the various methods you can use on the array prototype - feel free to click through them and refresh your knowledge as required: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+Particularly important in this course are:
+
+map()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+find()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+findIndex()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+filter()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+reduce()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce?v=b
+concat()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat?v=b
+slice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+splice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+ 
+##########       
 Section 3  understanding the Base Features & Syntaxt :
 
-Lect 25 : Module Introduction
+Lec 25 Module Introduction
 
-Lect 26 The Build Workflow
+Lec 26 The Build Workflow
   -> Useing a build work flow
    > Recomanded for spas and mpas
    > Optimize code (faster)
@@ -179,35 +190,34 @@ Lect 27 Using Create React App.
 
 Lec 28 Undersranding the folder structure.
 
->package.json - depency use for app mention.
->node_module - all dependancy
->public - root folder server by web server by end.
-        -index.html
-        -mainfest.json - metadata for app
->src - script file in src.
+        >package.json - depency use for application mention.
+        >node_module - all dependancy
+        >public - root folder server by web server by end.
+                -index.html
+                -mainfest.json - metadata for app
+        >src - script file in src.
 
- -index.js - access root element dom [index.html]
- -registerService.js - precatch our script file.
- -test.js - unit test.
+        -index.js - access root element dom [index.html]
+        -registerService.js - precatch our script file.
+        -test.js - unit test.
  
-Lect 29 Understanding Component Basics
- -custom html element is companonet which construct application.
+Lec 29 Understanding Component Basics
+        -custom html element is component which construct application.
  
+Lec 30 Understanding JSX
+        -Basic code is complie and render to brwoser
+        -If neeed to write code with React 
+        return React.createElement('div', {className : 'App'}, React.createElement('h1','this is working'))
+        where,  1) element or other component
+                2) javascript obj
+                3) any amt childer ...what nested in div
 
-Lect 30 Understanding JSX
- -Basic code is complie and render to brwoser
- -If neeed to write code with React 
-  return React.createElement('div', {className : 'App'}, React.createElement('h1','this is working'))
-       1) element or other component
-       2) javascript obj
-       3) any amt childer ...what nested in div
-
-Lect 31 JSX Restriction
+Lec 31 JSX Restriction
   
   -It clear look html and it allow html code in javascript file
-  -class is not because its key work in javacript , so className is used.
+  -we can not use attribute class, because its key work in javacript so in react will used className as attribute.
   -code is not real html its jsx code.. but react convert it to html.
-  - we have only one root element.cant return json element, wrappe in one root html element
+  -we have only one root element.cannot return json element, wrappe in one root html element
   
 Lec 32 creating a Functional component.
   
@@ -259,7 +269,7 @@ Lect 36. Working with Props
 
         export default person;
 
-Lec 37 Understanding the Children Property
+Lec 37 Understanding the Children prop
 
 >childer refer to any opening and closing element , it also refer plain text.
           App.js
@@ -277,7 +287,7 @@ Lec 37 Understanding the Children Property
           export default person;
 
 
-after Lec 36 & 37 --- Must see demo 'base-syntax-01-props-custom-cmp'
+Demo 'base-syntax-01-props-custom-cmp'
 
 Lect 38. Understanding & Using State
 
@@ -286,7 +296,59 @@ Lect 38. Understanding & Using State
 > state cannot change .. if it change state lead to re render
 
 Lect 39. Props & State
->revision
+props and state are CORE concepts of React. Actually, only changes in props and/ or state trigger React to re-render your components and potentially update the DOM in the browser (a detailed look at how React checks whether to really touch the real DOM is provided in section 6).
+
+>>>>Props
+> props allow you to pass data from a parent (wrapping) component to a child (embedded) component.
+
+--Example: AllPosts Component:
+const posts = () => {
+        return (
+                <div>
+                        <Post title="My first Post" />
+                </div>
+                );
+        }
+
+Here, title is the custom property (prop ) set up on the custom Post component. We basically replicate the default HTML attribute behavior we already know (e.g. <input type="text"> informs the browser about how to handle that input).
+
+const post = (props) => {
+        return (
+                <div>
+                        <h1>{props.title}</h1>
+                </div>
+        );
+}
+
+The Post component receives the props argument. 
+You can of course name this argument whatever you want - it's your function definition, React doesn't care! But React will pass one argument to your component function => An object, which contains all properties you set up on <Post ... /> .
+
+
+
+>>>>State
+Whilst props allow you to pass data down the component tree (and hence trigger an UI update), state is used to change the component, well, state from within. 
+Changes to state also trigger an UI update.
+Example:
+NewPost Component:
+
+class NewPost extends Component { // state can only be accessed in class-based components!
+        state = {
+                counter: 1
+        };
+        render () { // Needs to be implemented in class-based components! Needs to return some JSX!.
+                return (
+                        <div>{this.state.counter}</div>
+                );
+        }
+}
+
+Here, the NewPost component contains state . 
+Only class-based components can define and use state . 
+You can of course pass the state down to functional components, but these then can't directly edit it.
+state simply is a property of the component class, you have to call it state though - the name is not optional.
+You can then access it via this.state in your class JSX code (which you return in the required render() method).
+Whenever state changes (taught over the next lectures), the component will re-render and reflect the new state. 
+The difference to props is, that this happens within one and the same component - you don't receive new data (props ) from outside!
 
 Lect 40. Handling Events with Methods
 >react only pass references.
