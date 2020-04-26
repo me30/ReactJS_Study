@@ -37,13 +37,12 @@ Lec 6 - [Why Should We Choose React? ]
         >High perfomance
         
 Lec 7/8/9/10/11
-
         
 ##########Section 2: Refreshing Next Generation JavaScript (Optional)
 Lec 12 - Module Introduction
 
 Lec 13 [Undersranding "let" and "const"]
-        - let and const  (key words)
+        >let and const  (key words)
         >before in JS there are var
         >const =  constant never change.
         >let = new var , its change.
@@ -76,9 +75,31 @@ Lec 15 - Export & Imports (Modules)
             - import * as bundled from './utility.js';
 
 Lec 16 - [Undersranding class]
-        >Blue print for object.
+        >class is Blue print for object.
                 propety / method
                 
+         Ex #1::
+         class Person {
+                constructor () {
+                        this.name = 'Max';
+                }
+        }
+        
+        Ex #2::
+        class Human {
+                species = 'human';
+        }
+
+        class Person extends Human {
+                name = 'Max';
+                printMyName = () => {
+                        console.log(this.name);
+                }
+        }
+        const person = new Person();.
+        person.printMyName();
+        console.log(person.species); // prints 'human'
+        
         >define - const myPerson = new Person();
         >class person extends master{}
         
