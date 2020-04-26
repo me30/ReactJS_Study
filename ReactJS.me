@@ -219,54 +219,57 @@ Lec 28 Undersranding the folder structure.
         -test.js - unit test.
 
 Lec 29 Understanding Component Basics
-        - custom html element is component which construct application.
+    > custom html element is component which construct application.
  
 Lec 30 Understanding JSX
-        -Basic code is complie and render to brwoser
-        -If neeed to write code with React 
-              return React.createElement('div', {className : 'App'}, React.createElement('h1','this is working'))
-        where,  1) element or other component
-                2) javascript obj
-                3) any amt childer ...what nested in div
+    > Basic code is complie and render to brwoser
+    > If neeed to write code with React 
+        - return React.createElement('div', {className : 'App'}, React.createElement('h1','this is working'))
+        - where, 1) element or other component
+                 2) javascript obj
+                 3) any amt childer ...what nested in div
 
 Lec 31 JSX Restriction
   
-  -It clear look html and it allow html code in javascript file
-  -we can not use attribute class, because its key work in javacript so in react will used className as attribute.
-  -code is not real html its jsx code.. but react convert it to html.
-  -we have only one root element.cannot return json element, wrappe in one root html element
+     > It clear look html and it allow html code in javascript file
+     > we can not use attribute class, because its key work in javacript so in react will used className as attribute.
+     > code is not real html its jsx code...but react convert it to html.
+     > we have only one root element.cannot return json elements, wrappe in one root html element
   
 Lec 32 creating a Functional component.
-  
-  -react is lib to build component is easy.
-  -component simple function only return some jsx/html
-  
-  [here programe for component which crete by function]
+    > react is lib to build component is easy.
+    > component simple function only return some jsx/html
+    [here programe for component which crete by function]
 
 Lect 33 Components & JSX Cheat Sheet
   
-  refer 'components-learning-card.pdf'
+  > Components are the core building block of React apps. 
+    Actually, React really is just a library for creating components in its core.
   
-  >Components are the core building block of React apps. Actually, React really is just a library for creating components in its core.
-  >A typical React app therefore could be depicted as a component tree 
+  > A typical React app therefore could be depicted as a component tree 
     - having one root component ("App") and then an potentially infinite amount of nested child components.
     
-  >Each component needs to return/ render some JSX code - it defines which HTML code React should render to the real DOM in the end.
+  > Each component needs to return/ render some JSX code 
+     - it defines which HTML code React should render to the real DOM in the end.
   
-  >JSX is NOT HTML but it looks a lot like it. Differences can be seen when looking closely though (for example className in JSX vs class in "normal HTML"). 
-  >JSX is just syntactic sugar for JavaScript, allowing you to write HTMLish code instead of nested React.createElement(...) calls.
+  > JSX is NOT HTML but it looks a lot like it. 
+    Differences can be seen when looking closely though (for example className in JSX vs class in "normal HTML"). 
+    
+  > JSX is just syntactic sugar for JavaScript, allowing you to write HTMLish code instead of nested            
+    React.createElement(...) calls.
   
   >When creating components, you have the choice between two different ways:
-        1. Functional components (also referred to as "presentational", "dumb" or "stateless" components - more about this later in the course) => 
+        1. Functional components [Referred to as "presentational", "dumb" or "stateless" components]
+           more about this later in the course) => 
                 const cmp = () => { return <div>some JSX</div> } 
                 (using ES6 arrow functions as shown here is recommended but optional)
-        2. class-based components (also referred to as "containers", "smart" or "stateful" components) => 
+        
+        2. class-based components [Referred to as "containers", "smart" or "stateful" components]
                 class Cmp extends Component { 
                         render () {
                                 return <div>some JSX</div> 
                          } 
-                }
-                        
+                }        
   
 Lect 34 Working with Components & Re-Using Them
         [here code .. inform that child component how to re use in parent component.]  
@@ -288,7 +291,7 @@ Lect 36. Working with Props
 
 Lec 37 Understanding the Children prop
 
->childer refer to any opening and closing element , it also refer plain text.
+    > childer refer to any opening and closing element , it also refer plain text.
           App.js
           --------
           <Person name="mine" age="30 >oh</Person
@@ -302,76 +305,88 @@ Lec 37 Understanding the Children prop
                 )
           }
           export default person;
-
-
-Demo 'base-syntax-01-props-custom-cmp'
+     
+     > Demo 'base-syntax-01-props-custom-cmp'
 
 Lect 38. Understanding & Using State
+     > some content in side in component which state change.
 
-> some content in side in component which state change
-> component class only allow state which extent Component
-> state cannot change .. if it change state lead to re render
+     > component class only allow state which extent Component.
+
+     > state cannot change .. if it change state lead to re render.
 
 Lect 39. Props & State
-props and state are CORE concepts of React. Actually, only changes in props and/ or state trigger React to re-render your components and potentially update the DOM in the browser (a detailed look at how React checks whether to really touch the real DOM is provided in section 6).
 
->>>>Props
-> props allow you to pass data from a parent (wrapping) component to a child (embedded) component.
+      > props and state are CORE concepts of React. 
+      > Actually, only changes in props and/ or state trigger React to re-render your components and potentially 
+        update the DOM in the browser 
+        (a detailed look at how React checks whether to really touch the real DOM is provided in section 6).
 
---Example: AllPosts Component:
-const posts = () => {
-        return (
-                <div>
-                        <Post title="My first Post" />
-                </div>
-                );
-        }
+      >>>> Props::
+      > props allow you to pass data from a parent (wrapping) component to a child (embedded) component.
 
-Here, title is the custom property (prop ) set up on the custom Post component. We basically replicate the default HTML attribute behavior we already know (e.g. <input type="text"> informs the browser about how to handle that input).
+      --Example: AllPosts Component:
+         
+         const posts = () => {
+            return (
+              <div>
+                 <Post title="My first Post" />
+              </div>
+            );
+         }
 
-const post = (props) => {
+      Here, title is the custom property (prop) set up on the custom Post component. 
+      We basically replicate the default HTML attribute behavior we already know 
+      (e.g. <input type="text"> informs the browser about how to handle that input).
+
+      const post = (props) => {
         return (
                 <div>
                         <h1>{props.title}</h1>
                 </div>
         );
-}
+      }
 
-The Post component receives the props argument. 
-You can of course name this argument whatever you want - it's your function definition, React doesn't care! But React will pass one argument to your component function => An object, which contains all properties you set up on <Post ... /> .
+     > The Post component receives the props argument. 
+     > You can of course name this argument whatever you want - it's your function definition, React doesn't care! 
+       But React will pass one argument to your component function => An object, which contains all properties 
+       you set up on <Post ... /> .
 
+     >>>> State::
+        
+     > Whilst props allow you to pass data down the component tree 
+       (and hence trigger an UI update), state is used to change the component, well, state from within. 
 
+       Changes to state also trigger an UI update.
+       Example: NewPost Component:
 
->>>>State
-Whilst props allow you to pass data down the component tree (and hence trigger an UI update), state is used to change the component, well, state from within. 
-Changes to state also trigger an UI update.
-Example:
-NewPost Component:
-
-class NewPost extends Component { // state can only be accessed in class-based components!
-        state = {
+       class NewPost extends Component { // state can only be accessed in class-based components!
+          state = {
                 counter: 1
-        };
-        render () { // Needs to be implemented in class-based components! Needs to return some JSX!.
+          };
+          render () { // Needs to be implemented in class-based components! Needs to return some JSX!.
                 return (
                         <div>{this.state.counter}</div>
                 );
-        }
-}
+          }
+       }
 
-Here, the NewPost component contains state . 
-Only class-based components can define and use state . 
-You can of course pass the state down to functional components, but these then can't directly edit it.
-state simply is a property of the component class, you have to call it state though - the name is not optional.
-You can then access it via this.state in your class JSX code (which you return in the required render() method).
-Whenever state changes (taught over the next lectures), the component will re-render and reflect the new state. 
-The difference to props is, that this happens within one and the same component - you don't receive new data (props ) from outside!
+    > Here, the NewPost component contains state. 
+    > Only class-based components can define and use state. 
+    > You can of course pass the state down to functional components, but these then can't directly edit it.
+    > state simply is a property of the component class, 
+      you have to call it state though - the name is not optional.
+    > You can then access it via this.state in your class JSX code 
+      (which you return in the required render() method).
+      Whenever state changes (taught over the next lectures), the component will re-render and reflect the new state. 
+      The difference to props is, 
+          that this happens within one and the same component - you don't receive new data (props ) from outside!
 
 Lect 40. Handling Events with Methods
->react only pass references.
->this not refere class at runtime ..
->always use camel letter for react event.
->this video show how click event call
+     > react only pass references.
+     > this not refere class at runtime ..
+     > always use camel letter for react event.
+     > this video show how click event call
 
 Lect 41. To Which Events Can You Listen?
 > need to read.
