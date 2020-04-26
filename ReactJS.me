@@ -110,12 +110,10 @@ Lec 17 - [Classes property Mehtod]
          
          
 Lec 18 - [The Spread and Rest operator]
-
-        >Spread 
+        >Spread
                 -used to split up array element or object properties.
                 -const newArray = {...oldArray,1,2}
                 -const newObj = {...oldObject, newProp:5}
-                
         >Rest
                 -used to merge list of function arguments in to array
                 function sortArg(...args){
@@ -204,31 +202,29 @@ Lec 26 The Build Workflow
      running on server.
    
 Lect 27 Using Create React App.
-> sudo npm install create-react-app -g
-> sudo chown -R 1000:1000 "/home/meena/.npm"
-  npx create-react-app my-app
-> npm start
+   > sudo npm install create-react-app -g
+   > sudo chown -R 1000:1000 "/home/meena/.npm"
+        npx create-react-app my-app
+   > npm start
 
 Lec 28 Undersranding the folder structure.
-
-        >package.json - depency use for application mention.
-        >node_module - all dependancy
-        >public - root folder server by web server by end.
-                -index.html
-                -mainfest.json - metadata for app
-        >src - script file in src.
-
+   > package.json - depency use for application mention.
+   > node_module - all dependancy
+   > public - root folder server by web server by end.
+        -index.html
+        -mainfest.json - metadata for app
+   > src - script file in src.
         -index.js - access root element dom [index.html]
         -registerService.js - precatch our script file.
         -test.js - unit test.
- 
+
 Lec 29 Understanding Component Basics
-        -custom html element is component which construct application.
+        - custom html element is component which construct application.
  
 Lec 30 Understanding JSX
         -Basic code is complie and render to brwoser
         -If neeed to write code with React 
-        return React.createElement('div', {className : 'App'}, React.createElement('h1','this is working'))
+              return React.createElement('div', {className : 'App'}, React.createElement('h1','this is working'))
         where,  1) element or other component
                 2) javascript obj
                 3) any amt childer ...what nested in div
