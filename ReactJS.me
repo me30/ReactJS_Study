@@ -389,41 +389,65 @@ Lect 40. Handling Events with Methods
      > this video show how click event call
 
 Lect 41. To Which Events Can You Listen?
-> need to read.
+     > In the last lecture, 
+     we saw that you can react to the onClick event - but to which other events can you listen? 
+     You can find a list of supported events here: https://reactjs.org/docs/events.html#supported-events
 
 Lec 42. Manipulating the State
->Read - state-learning-card.pdf
->state changes or prop changes, it basically analise code which alredady render to DOM and update to existing dom and update new state and prop
+    > Read - state-learning-card.pdf
+    > state changes or prop changes, 
+    it basically analise code which alredady render to DOM and update to existing dom and update new state and prop
 
 
 Lec 43 Function Components Naming
-In the next lecture, we'll learn how to manage state in functional components (instead of class-based components).
+    > In the next lecture, we'll learn how to manage state in functional components (instead of class-based components).
 
-In case you're getting an error with the code shown in the next lecture, simply assign a capitalized variable name to the variable that holds your functional component.
+    > In case you're getting an error with the code shown in the next lecture, 
+    simply assign a capitalized variable name to the variable that holds your functional component.
 
-Example:
+      Example:
+      Use
+        - const App = () => { ... }
+        instead of
+        - const app = () => { ... }
+        
+        Technically, that's not required but depending on your project setup, 
+        the built-in linter (a code quality checking tool) that comes with create-react-app might not like the lowercase
+        variable name.
 
-Use
+        You can also avoid this by creating projects with the right react-scripts version, 
+        which I would recommend for this course anyways (see the setup video, lecture 26)
 
-const App = () => { ... }
-instead of
+       create-react-app my-app --scripts-version 1.1.5
 
-const app = () => { ... }
-Technically, that's not required but depending on your project setup, the built-in linter (a code quality checking tool) that comes with create-react-app might not like the lowercase variable name.
+Lec 44 Using the useState() Hook for state Manipulation ::
 
-You can also avoid this by creating projects with the right react-scripts version, which I would recommend for this course anyways (see the setup video, lecture 26)
+       > React 16.8 there is way to manage state in functional component called react hook.
 
-create-react-app my-app --scripts-version 1.1.5
+       > useState() is hook allow us mange state in functional component.
+         2 element:
+           -> current state is first element
+           -> fucntion that allow s to update this state.
 
+Lec 45 Stateless vs Stateful Components ::
 
-Lec 44 Using the useState() Hook for state Manipulation::
+       > stateful (smart, container) :
+           - React class component is called as a stateful component.
+           - Stateful component plays with all life cycle methods of React.
+           - This component will modify state.
 
-React 16.8 there is way to manage state in functional component called react hook.
-
->useState is hook allow us mange state in functional component.
-
-two eleemnt
- -> current state is first element
- -> fucntion that allow s to update this state.
+       > stateless (dump , presentational) : 
+           - No internal state mgt.
+           - Functional component is like pure function in JavaScript.
+           - Functional component is also called as a stateless component.
+           - The functional component only receives props from parent component and return you JSX elements.
+           - The functional component doesn’t play with any lifecycle methods of React and doesn’t play with the component
+             state.
+             
+       Its good practice to use stateless becuase its presentational and not every component do every thing. 
+       If every componenet do everthing then its harder to manage application.
+       
+ Lec 46 Passing method reference between component ::
  
-  
+ 
+       > 
